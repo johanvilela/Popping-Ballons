@@ -6,7 +6,10 @@
         <meta charset="utf-8">
 
         <script language='Javascript'>
-        
+            function startGame(){
+                var game_level = document.getElementById("game_level").value;
+                window.location.href = "game.html?"+game_level;
+            }
         </script>
     </head>
     <body>
@@ -17,10 +20,13 @@
                 <b>Level: </b>
                 <select name="game_level" id="game_level">
                     <option value="1">Easy</option>
-                    <option value="2">Medium</option>
+                    <option value="2" selected>Medium</option>
                     <option value="3">Hard</option>
                 </select>
             </p>
+            <br>
+            <!-- Start Button -->
+            <img src="images/start.png" alt="start button" onclick="startGame();">
         </div>
 
     </body>
