@@ -22,10 +22,13 @@ function startGame() {
     // Inserting time into chronometer
     document.getElementById('chronometer_time').innerHTML = time_in_seconds;
 
-    // Number of balloons
+    // Creating balloons
     var count_balllons = 20;
-
     createBallons(count_balllons);
+
+    // Print number of full balloons
+    document.getElementById('full_balloons').innerHTML = count_balllons;
+    document.getElementById('burst_balloons').innerHTML = 0;
 
 
 }

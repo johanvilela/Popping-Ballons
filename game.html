@@ -8,15 +8,15 @@
         <script src="game.js"></script>
     </head>
     <body onload="startGame();">
-        <div style="float:left; width:auto; height:500px; background: #fff; border: 1px solid #a2a2a2;">
-            <!-- Ballons counter -->
+        <div style="float:left; width:auto; height:500px; background: #fff; border: 1px solid #a2a2a2; margin-right:5px;">
+            <!-- Full ballons counter -->
             <table border="0">
                 <tr>
                     <td>
                         <img src="images/big_blue_balloon.png" alt="Balloon">
                     </td>
                     <td>
-                        10
+                        <span id="full_balloons" style="font-size:40px;"></span>
                     </td>
                 </tr>
             </table>
@@ -29,7 +29,7 @@
                         <img src="images/big_blue_burst_balloon.png" alt="Burst balloon">
                     </td>
                     <td>
-                        10
+                        <span id="burst_balloons" style="font-size:40px;"></span>
                     </td>
                 </tr>
             </table>
