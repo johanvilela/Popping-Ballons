@@ -22,5 +22,19 @@ function startGame() {
     // Inserting time into chronometer
     document.getElementById('chronometer_time').innerHTML = time_in_seconds;
 
+    // Number of balloons
+    var count_balllons = 20;
 
+    createBallons(count_balllons);
+
+
+}
+
+function createBallons(count_balllons){
+    for(var i = 1; i <= count_balllons; i++) {
+        var balloon = document.createElement("img");
+        balloon.src = 'images/small_blue_balloon.png';
+        balloon.style.margin = "12px";
+        document.getElementById("scenery").appendChild(balloon);
+    }
 }
