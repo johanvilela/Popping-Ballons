@@ -2,6 +2,8 @@ var EASY = 1;
 var MEDIUM = 2;
 var HARD = 3;
 
+var timerId = null; // Armazena a chamada de setTimeout()
+
 function startGame() {
     var url = window.location.search;
 
@@ -18,6 +20,7 @@ function startGame() {
     else if (game_level == HARD) {
         time_in_seconds = 30;
     }
+    else {time_in_seconds = 3;}
 
     // Inserting time into chronometer
     document.getElementById('chronometer_time').innerHTML = time_in_seconds;
@@ -30,7 +33,29 @@ function startGame() {
     document.getElementById('full_balloons').innerHTML = count_balllons;
     document.getElementById('burst_balloons').innerHTML = 0;
 
+    countdown(time_in_seconds);
 
+}
+
+function countdown(seconds){
+
+    if (seconds == -1) {
+        clearTimeout(timerId); // stop setTimeout()
+        game_over();
+        return false;
+    }
+
+    // Inserting time into chronometer
+    document.getElementById('chronometer_time').innerHTML = seconds;
+
+    seconds--;
+
+    timerId = setTimeout("countdown(" + seconds + ")", 1000);
+
+}
+
+function game_over() {
+    alert("You lose!");
 }
 
 function createBallons(count_balllons){
