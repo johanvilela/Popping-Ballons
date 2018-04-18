@@ -12,13 +12,13 @@ function startGame() {
     var time_in_seconds = 0;
 
     if (game_level == EASY) {
-        time_in_seconds = 120;
+        time_in_seconds = 50;
     }
     else if (game_level == MEDIUM) {
-        time_in_seconds = 60;
+        time_in_seconds = 30;
     }
     else if (game_level == HARD) {
-        time_in_seconds = 30;
+        time_in_seconds = 20;
     }
     else {time_in_seconds = 3;}
 
@@ -26,7 +26,7 @@ function startGame() {
     document.getElementById('chronometer_time').innerHTML = time_in_seconds;
 
     // Creating balloons
-    var count_balllons = 20;
+    var count_balllons = 50;
     createBallons(count_balllons);
 
     // Print number of full balloons
