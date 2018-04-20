@@ -64,7 +64,7 @@ function createBallons(count_balllons){
         balloon.src = 'images/small_blue_balloon.png';
         balloon.style.margin = "12px";
         balloon.id = 'balloon' + i;
-        balloon.onclick = function() { burst(this); }
+        balloon.onmousedown = function() { burst(this); }
 
         document.getElementById("scenery").appendChild(balloon);
     }
@@ -73,7 +73,7 @@ function createBallons(count_balllons){
 function burst(balloon) {
     var balloon_id = balloon.id;
 
-    document.getElementById(balloon_id).setAttribute('onclick', '');
+    document.getElementById(balloon_id).setAttribute('onmousedown', '');
     document.getElementById(balloon_id).src = 'images/small_blue_burst_balloon.png';
 
     update_score();
